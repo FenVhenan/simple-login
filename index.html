@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #calculator{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form name="login">
+            <label for="username">Username:</label>
+            <input id="username" type="text">
+            <label for="password">Password:</label>
+            <input id="password" type="password">
+            <input type="button" value="Login" id="submit" onclick="validate()"/> 
+        </form>
+
+        <div id="calculator">
+            <input id="firstnum" type="number">
+            <label>+</label>
+            <input id="secondnum" type="number">
+            <input type="button" value="=" id="submit" onclick="addition()"/>
+            <label id="answer"></label><br>
+            <input id="subone" type="number">
+            <label>-</label>
+            <input id="subtwo" type="number">
+            <input type="button" value="=" id="submit" onclick="subtraction()"/>
+            <label id="subanswer"></label><br>
+            <input id="multone" type="number">
+            <label>*</label>
+            <input id="multtwo" type="number">
+            <input type="button" value="=" id="submit" onclick="multiplication()"/>
+            <label id="multanswer"></label><br>
+            <input id="divideone" type="number">
+            <label>/</label>
+            <input id="dividetwo" type="number">
+            <input type="button" value="=" id="submit" onclick="division()"/>
+            <label id="divide"></label><br>
+        </div>
+        <script>
+            function validate(){
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                if(username == "admin" && password == "123"){
+                    document.getElementById("calculator").style.display = "block";
+                }else{
+                    alert ("Incorrect Username/Password!")
+                }
+            }
+            function addition(){
+                let x = parseInt(document.getElementById("firstnum").value);
+                let y = parseInt(document.getElementById("secondnum").value);
+                document.getElementById("answer").innerHTML = x + y;
+            }
+            function subtraction(){
+                let x = parseInt(document.getElementById("subone").value);
+                let y = parseInt(document.getElementById("subtwo").value);
+                document.getElementById("subanswer").innerHTML = x - y;
+            }
+            function multiplication(){
+                let x = parseInt(document.getElementById("multone").value);
+                let y = parseInt(document.getElementById("multtwo").value);
+                document.getElementById("multanswer").innerHTML = x * y;
+            }
+            function division(){
+                let x = parseInt(document.getElementById("divideone").value);
+                let y = parseInt(document.getElementById("dividetwo").value);
+                document.getElementById("divide").innerHTML = x / y;
+            }
+        </script>
+
+    </body>
+</html>
